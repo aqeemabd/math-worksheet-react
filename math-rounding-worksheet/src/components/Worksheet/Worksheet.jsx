@@ -37,21 +37,28 @@ const Worksheet = () => {
   };
 
   const nextBtn = () => {
+    let isCorrect = selectedOption === data[index].answer;
+
     if (index < data.length - 1) {
-      if (selectedOption === data[index].answer) {
-        setScore(++score);
+      if (isCorrect) {
+        setScore((prevScore) => prevScore + 1);
       }
 
-      setIndex(++index);
-      setQuestion(data[index].question);
+      setIndex((prevIndex) => prevIndex + 1);
+      setQuestion(data[index + 1].question);
       setSelectedOption(null);
       setOptionValid(false);
 
-      if (index === data.length - 1) {
+      if (index + 1 === data.length - 1) {
         setIsLast(true);
       }
     } else {
-      submit(true);
+      
+      setScore((prevScore) => {
+        const finalScore = isCorrect ? prevScore + 1 : prevScore;
+        submit(true, finalScore);
+        return finalScore;
+      });
     }
   };
 
@@ -76,7 +83,7 @@ const Worksheet = () => {
     setIsLast(false);
   };
 
-  const submit = async (flag) => {
+  const submit = async (flag, score) => {
     const postData = {
       username: username,
       score: score,
