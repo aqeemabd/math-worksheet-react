@@ -1,0 +1,16 @@
+.lottieAnimation_wrapper {
+  width: 45%;
+  margin-bottom: 6%;
+}
+
+@media screen and (max-width: 800px) {
+  .lottieAnimation_wrapper {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .lottieAnimation_wrapper {
+    width: 86%;
+  }
+}

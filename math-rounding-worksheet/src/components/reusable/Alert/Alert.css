@@ -1,0 +1,37 @@
+.alert {
+  position: fixed;
+  top: 20px;
+  right: -300px;
+  padding: 15px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  transition: right 0.5s ease-in-out, opacity 0.5s;
+}
+
+.alert.show {
+  right: 20px;
+  opacity: 1;
+}
+
+.alert.hide {
+  right: -300px;
+  opacity: 0;
+}
+
+.alert.success {
+  background-color: #28a745;
+}
+
+.alert.error {
+  background-color: #dc3545;
+}
+
+@media screen and (max-width: 600px) {
+  .alert.show {
+    right: 10px;
+  }
+  .alert {
+    font-size: 10px;
+  }
+}

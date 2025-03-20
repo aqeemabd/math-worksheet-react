@@ -1,0 +1,101 @@
+.worksheet_wrapper {
+  background: #fff;
+  width: 40%;
+  height: auto;
+  border: 1px solid;
+  box-shadow: 10px 10px #000;
+
+  color: #242424;
+}
+
+.question_wrapper {
+  text-align: left;
+}
+
+.question_wrapper p,
+.question_wrapper label {
+  color: #242424;
+}
+
+.question_header {
+  border-bottom: 1px solid #242424;
+  padding: 6px 6px 6px 35px;
+}
+
+.question_body {
+  padding: 35px;
+}
+
+.question_btn_wrapper {
+  padding-top: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.question_score {
+  padding: 10%;
+}
+
+.question_btn_wrapper button:first-child {
+  margin-right: 20px;
+}
+
+.nextBtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.score {
+  font-size: 50px;
+  margin: 0;
+}
+
+.dashboardBtn {
+  background-color: #484848;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .worksheet_wrapper {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .worksheet_wrapper {
+    width: 100%;
+  }
+
+  .dashboardBtn {
+    margin-right: unset;
+    margin-bottom: 20px;
+  }
+
+  .resultBtn_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .worksheet_title {
+    font-size: 40px;
+  }
+
+  .score_message {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .score {
+    font-size: 40px;
+  }
+}
