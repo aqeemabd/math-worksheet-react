@@ -137,10 +137,10 @@ Retrieve the list of top-ranking users.
   ]
   ```
 
-#### **2️⃣ POST /v1/api/ranking**
-Submit a new ranking score.
+#### **2️⃣ POST /v1/api/ranking-add**
+Submit or update a ranking score.
 
-- **URL:** `/v1/api/ranking`
+- **URL:** `/v1/api/ranking-add`
 - **Method:** `POST`
 - **Request Body (JSON):**
   ```json
@@ -149,10 +149,22 @@ Submit a new ranking score.
     "score": 95
   }
   ```
-- **Response:**
+- **Response (If New Entry):**
   ```json
   {
-    "message": "Ranking added successfully",
-    "ID": 21
+    "message": "Ranking added",
+    "username": "player1",
+    "score": 95
   }
   ```
+- **Response (If Updated):**
+  ```json
+  {
+    "message": "Ranking updated",
+    "username": "player1",
+    "score": 95
+  }
+  ```
+- **Error Responses:**
+  - `400 Bad Request` → Missing or invalid `username`/`score`
+  - `500 Internal Server Error` → Database query failure
