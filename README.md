@@ -107,3 +107,52 @@ Remember to run it in both math-rounding-worksheet and server folder
 
 Runs the app in the development mode.\
 Open the localhost url in the terminal to view it in the browser.
+
+## API Documentation
+
+### **Ranking API**
+
+#### **1️⃣ GET /v1/api/ranking**
+Retrieve the list of top-ranking users.
+
+- **URL:** `/v1/api/ranking`
+- **Method:** `GET`
+- **Response:**
+  ```json
+  [
+    {
+      "ID": 1,
+      "username": "player1",
+      "score": 95,
+      "added_at": "2025-03-20T10:00:00Z",
+      "updated_at": "2025-03-20T10:30:00Z"
+    },
+    {
+      "ID": 2,
+      "username": "player2",
+      "score": 88,
+      "added_at": "2025-03-19T12:00:00Z",
+      "updated_at": "2025-03-19T12:30:00Z"
+    }
+  ]
+  ```
+
+#### **2️⃣ POST /v1/api/ranking**
+Submit a new ranking score.
+
+- **URL:** `/v1/api/ranking`
+- **Method:** `POST`
+- **Request Body (JSON):**
+  ```json
+  {
+    "username": "player1",
+    "score": 95
+  }
+  ```
+- **Response:**
+  ```json
+  {
+    "message": "Ranking added successfully",
+    "ID": 21
+  }
+  ```
